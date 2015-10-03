@@ -2,8 +2,15 @@ var threeItems = [1,2,3];
 //create a function named 'last' that returns the last item from 'threeItems'
 //alert the result of your function
 
-  //code here
 
+function last(){
+  for (var i = 0; i < threeItems.length; i++) {
+    if (i === threeItems.length - 1) {
+    console.log(threeItems[i]);
+    }  
+  }
+}
+last();
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -13,7 +20,17 @@ var threeItems = [1,2,3];
 //Loop through evenArray removing all values that aren't even 
 var evenArray = [1,2,3,6,22,98,45,23,22,12];
 
-  //code here
+
+function checkEven(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      arr.splice(i, 1);
+      i--;
+    } 
+  }
+  console.log(arr); 
+}
+checkEven(evenArray);
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -26,7 +43,23 @@ var getRandomArbitrary = function() {
 }
 var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
-  //code here
+function getNumber(arr){
+  var randNum = getRandomArbitrary();
+  console.log(randNum);
+  var answer = false;
+  for (var i = 0; i < arr.length; i++) {
+    if (randNum === arr[i]) {
+      answer = true;
+    }
+  }
+  if (answer === true) {
+    console.log("True");
+  }
+  else {
+    console.log("False");
+  }
+}
+getNumber(randomArray);
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -37,7 +70,12 @@ var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 var first = [1,2,3,4,5];
 var second;
 
-  //code here
+var first = [1,2,3,4,5];
+var second = first.slice(0, first.length);
+second.push(6, 7);
+
+console.log(first); //[1,2,3,4,5];
+console.log(second); 
 
 alert(first) //[1,2,3,4,5];
 alert(second) //[1,2,3,4,5,6,7];
